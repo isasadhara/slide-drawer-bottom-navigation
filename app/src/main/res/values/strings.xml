@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">cobacoba</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="first">First</string>
+    <string name="second">Second</string>
+    <string name="third">Third</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="img_content_description">ImageView</string>
+    <string name="activity_label">Custom Action Drawer</string>
+
+    <string-array name="nav_drawer_title">
+        <item>CART</item>
+        <item>FAQ</item>
+        <item>CUSTOMER SERVICE</item>
+        <item>ABOUT APP</item>
+        <item>LOGOUT</item>
+    </string-array>
+
+    <array name="nav_drawer_icons">
+        <item>ic_cart</item>
+        <item>ic_faq</item>
+        <item>ic_customer_service</item>
+        <item>ic_about</item>
+        <item>ic_logout</item>
+    </array>
+</resources>
