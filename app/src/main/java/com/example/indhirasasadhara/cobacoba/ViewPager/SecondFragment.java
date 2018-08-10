@@ -1,4 +1,4 @@
-package com.example.indhirasasadhara.cobacoba.SliderNavigation;
+package com.example.indhirasasadhara.cobacoba.ViewPager;
 
 
 import android.os.Bundle;
@@ -12,13 +12,10 @@ import com.example.indhirasasadhara.cobacoba.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SliderFragment extends Fragment {
-    public static SliderFragment newInstance() {
-        SliderFragment fragment = new SliderFragment();
-        return fragment;
-    }
+public class SecondFragment extends Fragment {
 
-    public SliderFragment() {
+
+    public SecondFragment() {
         // Required empty public constructor
     }
 
@@ -27,7 +24,9 @@ public class SliderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_slider, container, false);
+        View view = inflater.inflate(R.layout.fragment_second, container, false);
+
+        return view;
     }
 
 }

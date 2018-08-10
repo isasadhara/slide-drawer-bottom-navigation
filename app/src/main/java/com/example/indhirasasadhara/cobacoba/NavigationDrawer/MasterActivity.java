@@ -36,13 +36,13 @@ public class MasterActivity extends FragmentActivity {
         titleLayout.setVisibility(View.VISIBLE);
     }
 
-    public void hideBackButton() {
-        ImageButton backbutton = (ImageButton) findViewById(R.id.comman_back);
-        backbutton.setVisibility(View.GONE);
-    }
-
-    public void showBackButton() {
-        ImageButton backbutton = (ImageButton) findViewById(R.id.comman_back);
-        backbutton.setVisibility(View.VISIBLE);
-    }
+//    public void hideBackButton() {
+//        ImageButton backbutton = (ImageButton) findViewById(R.id.search);
+//        backbutton.setVisibility(View.GONE);
+//    }
+//
+//    public void showBackButton() {
+//        ImageButton backbutton = (ImageButton) findViewById(R.id.search);
+//        backbutton.setVisibility(View.VISIBLE);
+//    }
 }

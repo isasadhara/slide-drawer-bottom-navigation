@@ -5,7 +5,6 @@
     android:id="@+id/drawer_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/black"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -18,7 +17,9 @@
             android:id="@+id/titlebar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@mipmap/ic_title_header">
+            android:background="#F34242"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
 
             <ImageButton
                 android:id="@+id/comman_menu"
@@ -29,26 +30,35 @@
                 android:layout_marginLeft="20dp"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/img_content_description"
-                android:src="@mipmap/menu" />
+                android:src="@drawable/ic_menu" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right">
             <ImageButton
-                android:id="@+id/comman_back"
+                android:id="@+id/keranjangputih"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
-                android:background="@mipmap/aero"
-                android:clickable="true"
-                android:contentDescription="@string/img_content_description" />
+                android:background="@drawable/ic_keranjangputih"
+                android:clickable="true" />
 
+            <ImageButton
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_search"
+                android:clickable="true" />
+            </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <FrameLayout
-                android:background="@color/accent"
                 android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -59,6 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 app:menu="@menu/bottom_navigation"
+                app:itemIconTint="@drawable/selector_bottom_nav"
+                app:itemTextColor="@drawable/selector_bottom_nav"
                 android:background="?android:attr/windowBackground"/>
         </RelativeLayout>
 

@@ -2,21 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_menu_camera"
+        android:icon="@drawable/ic_home"
         android:title="Home" />
 
     <item
-        android:id="@+id/nav_favorites"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="Favorites" />
+        android:id="@+id/nav_pasar"
+        android:icon="@drawable/ic_bag"
+        android:title="Pasar" />
 
     <item
-        android:id="@+id/nav_search"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="Search" />
+        android:id="@+id/nav_keranjang"
+        android:icon="@drawable/ic_keranjang"
+        android:title="Keranjang" />
 
     <item
-        android:id="@+id/nav_bottom"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="Bottom" />
+        android:id="@+id/nav_akun"
+        android:icon="@drawable/ic_user"
+        android:title="Akun" />
 </menu>

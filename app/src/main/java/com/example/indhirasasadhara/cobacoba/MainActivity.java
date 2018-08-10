@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +27,7 @@ import com.example.indhirasasadhara.cobacoba.BottomNavigation.BottomNavigationVi
 import com.example.indhirasasadhara.cobacoba.NavigationDrawer.DrawerListAdapter;
 import com.example.indhirasasadhara.cobacoba.NavigationDrawer.MasterActivity;
 import com.example.indhirasasadhara.cobacoba.NavigationDrawer.NavDrawerItem;
-import com.example.indhirasasadhara.cobacoba.SliderNavigation.SliderFragment;
+import com.example.indhirasasadhara.cobacoba.ViewPager.TabFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -36,7 +37,6 @@ public class MainActivity extends MasterActivity {
 
     private ListView mDrawerList;
     private ImageButton menu;
-    public ImageButton back;
     private String[] navMenuTitles;
     private TypedArray navMenuIcons;
     private DrawerListAdapter adapter;
@@ -44,13 +44,13 @@ public class MainActivity extends MasterActivity {
 
     private ArrayList<NavDrawerItem> navDrawerItems;
     DrawerLayout mDrawerLayout;
-    ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //bottom navigation
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
@@ -60,17 +60,16 @@ public class MainActivity extends MasterActivity {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        selectedFragment = new BottomFragment2().newInstance();
-//                        Toast.makeText(getApplicationContext(), "Button is clicked", Toast.LENGTH_LONG).show();
+                        selectedFragment = new BottomFragment2();
                         break;
-                    case R.id.nav_favorites:
-                        selectedFragment = new BottomFragment3().newInstance();
+                    case R.id.nav_pasar:
+                        selectedFragment = new BottomFragment3();
                         break;
-                    case R.id.nav_search:
-                        selectedFragment = new BottomFragment1().newInstance();
+                    case R.id.nav_keranjang:
+                        selectedFragment = new BottomFragment1();
                         break;
-                    case R.id.nav_bottom:
-                        selectedFragment = new BottomFragment1().newInstance();
+                    case R.id.nav_akun:
+                        selectedFragment = new BottomFragment1();
                         break;
                 }
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -85,8 +84,8 @@ public class MainActivity extends MasterActivity {
         transaction.replace(R.id.fragment_container, BottomFragment2.newInstance());
         transaction.commit();
 
-
-        back = (ImageButton) findViewById(R.id.comman_back);
+//<<=========================================================================================================================>>
+        //Drawer navigation
         menu = (ImageButton) findViewById(R.id.comman_menu);
 
         mDrawerList = (ListView) findViewById(R.id.drawer_list);
@@ -107,20 +106,10 @@ public class MainActivity extends MasterActivity {
             }
         });
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.onBackPressed();
-            }
-        });
-
         // Custom Header ...
-        mHeader = getLayoutInflater().inflate(R.layout.navigation_list_header,
-                mDrawerList, false);
-        TextView txtProfileName = (TextView) mHeader
-                .findViewById(R.id.txtProfileName);
-        ImageView imgProfileImage = (ImageView) mHeader
-                .findViewById(R.id.imgProfileImage);
+        mHeader = getLayoutInflater().inflate(R.layout.navigation_list_header, mDrawerList, false);
+        TextView txtProfileName = (TextView) mHeader.findViewById(R.id.txtProfileName);
+        ImageView imgProfileImage = (ImageView) mHeader.findViewById(R.id.imgProfileImage);
 
         txtProfileName.setText("Indhira Sasadhara");
 
@@ -138,16 +127,11 @@ public class MainActivity extends MasterActivity {
 
         navDrawerItems = new ArrayList<NavDrawerItem>();
 
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons
-                .getResourceId(0, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons
-                .getResourceId(1, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons
-                .getResourceId(2, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons
-                .getResourceId(3, -1)));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons
-                .getResourceId(4, -1)));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
 
         navMenuIcons.recycle();
 
@@ -164,30 +148,30 @@ public class MainActivity extends MasterActivity {
         mDrawerList.setAdapter(adapter);
 
 //        if (savedInstanceState == null) {
-//            Fragment landingFragment = new HomeFragment();
+//            Fragment landingFragment = new BottomFragment2();
+//            Log.e("cek", "start");
 //            ReplaceFragement(landingFragment);
 //        }
     }
 
+
+//fragment buat drawer
     private void changeFragment(int index) {
         switch (index) {
 
             // MAIN ...
             case 1:
                 Fragment blankFragment = new BottomFragment2();
-                ReplaceFragement(blankFragment);
+                Log.e("cek", "home");
                 break;
             case 2:
                 Fragment faqFragment = new BottomFragment1();
-                ReplaceFragement(faqFragment);
                 break;
             case 3:
                 Fragment customerserviceFragment = new BottomFragment3();
-                ReplaceFragement(customerserviceFragment);
                 break;
             case 4:
                 Fragment aboutFragment = new BottomFragment3();
-                ReplaceFragement(aboutFragment);
                 break;
 
             default:
@@ -195,21 +179,6 @@ public class MainActivity extends MasterActivity {
         }
     }
 
-    public void ReplaceFragement(Fragment loginFragment) {
-        FragmentTransaction transaction = getSupportFragmentManager()
-                .beginTransaction();
-        transaction.replace(R.id.fragment_container, loginFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
 
-    @Override
-    public void onBackPressed() {
 
-        if (mDrawerLayout.isDrawerOpen(Gravity.START)) {
-            mDrawerLayout.closeDrawers();
-        } else {
-            super.onBackPressed();
-        }
-    }
 }

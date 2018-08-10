@@ -53,10 +53,8 @@ public class DrawerListAdapter extends BaseAdapter {
         convertView = mInflater.inflate(R.layout.drawer_list_item, null, true);
 
         TextView txtTitle = (TextView) convertView.findViewById(R.id.text);
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.image);
 
         txtTitle.setText(navDrawerItems.get(position).getTitle());
-        imageView.setImageResource(navDrawerItems.get(position).getIcon());
         return convertView;
     }
 
