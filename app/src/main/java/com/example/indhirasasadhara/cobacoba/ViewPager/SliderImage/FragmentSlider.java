@@ -1,4 +1,4 @@
-package com.example.indhirasasadhara.cobacoba.ViewPager;
+package com.example.indhirasasadhara.cobacoba.ViewPager.SliderImage;
 
 
 import android.os.Bundle;

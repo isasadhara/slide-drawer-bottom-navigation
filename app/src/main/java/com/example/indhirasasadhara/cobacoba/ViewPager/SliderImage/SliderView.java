@@ -1,4 +1,4 @@
-package com.example.indhirasasadhara.cobacoba.ViewPager;
+package com.example.indhirasasadhara.cobacoba.ViewPager.SliderImage;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

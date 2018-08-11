@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -20,17 +19,18 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.indhirasasadhara.cobacoba.BottomNavigation.BottomFragment1;
-import com.example.indhirasasadhara.cobacoba.BottomNavigation.BottomFragment2;
-import com.example.indhirasasadhara.cobacoba.BottomNavigation.BottomFragment3;
+import com.example.indhirasasadhara.cobacoba.BottomNavigation.AkunFragment;
+import com.example.indhirasasadhara.cobacoba.BottomNavigation.KeranjangFragment;
+import com.example.indhirasasadhara.cobacoba.BottomNavigation.HomeFragment;
+import com.example.indhirasasadhara.cobacoba.BottomNavigation.PasarFragment;
 import com.example.indhirasasadhara.cobacoba.BottomNavigation.BottomNavigationViewHelper;
 import com.example.indhirasasadhara.cobacoba.NavigationDrawer.DrawerListAdapter;
 import com.example.indhirasasadhara.cobacoba.NavigationDrawer.MasterActivity;
 import com.example.indhirasasadhara.cobacoba.NavigationDrawer.NavDrawerItem;
-import com.example.indhirasasadhara.cobacoba.ViewPager.TabFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
 @SuppressWarnings("ResourceType")
 @SuppressLint({"NewApi", "RtlHardcoded"})
 public class MainActivity extends MasterActivity {
@@ -60,16 +60,16 @@ public class MainActivity extends MasterActivity {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        selectedFragment = new BottomFragment2();
+                        selectedFragment = new HomeFragment();
                         break;
                     case R.id.nav_pasar:
-                        selectedFragment = new BottomFragment3();
+                        selectedFragment = new PasarFragment();
                         break;
                     case R.id.nav_keranjang:
-                        selectedFragment = new BottomFragment1();
+                        selectedFragment = new KeranjangFragment();
                         break;
                     case R.id.nav_akun:
-                        selectedFragment = new BottomFragment1();
+                        selectedFragment = new AkunFragment();
                         break;
                 }
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -81,10 +81,10 @@ public class MainActivity extends MasterActivity {
 
         //Setting Layout to be display
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragment_container, BottomFragment2.newInstance());
+        transaction.replace(R.id.fragment_container, HomeFragment.newInstance());
         transaction.commit();
 
-//<<=========================================================================================================================>>
+        //<<================================================================================================================>>
         //Drawer navigation
         menu = (ImageButton) findViewById(R.id.comman_menu);
 
@@ -148,37 +148,36 @@ public class MainActivity extends MasterActivity {
         mDrawerList.setAdapter(adapter);
 
 //        if (savedInstanceState == null) {
-//            Fragment landingFragment = new BottomFragment2();
+//            Fragment landingFragment = new HomeFragment();
 //            Log.e("cek", "start");
 //            ReplaceFragement(landingFragment);
 //        }
     }
 
-
-//fragment buat drawer
+    //<<==============================================================================================================>>
+    //fragment buat drawer
     private void changeFragment(int index) {
         switch (index) {
 
             // MAIN ...
             case 1:
-                Fragment blankFragment = new BottomFragment2();
+                Fragment blankFragment = new HomeFragment();
                 Log.e("cek", "home");
                 break;
             case 2:
-                Fragment faqFragment = new BottomFragment1();
+                Fragment faqFragment = new KeranjangFragment();
                 break;
             case 3:
-                Fragment customerserviceFragment = new BottomFragment3();
+                Fragment customerserviceFragment = new PasarFragment();
                 break;
             case 4:
-                Fragment aboutFragment = new BottomFragment3();
+                Fragment aboutFragment = new PasarFragment();
                 break;
 
             default:
                 break;
         }
     }
-
 
 
 }

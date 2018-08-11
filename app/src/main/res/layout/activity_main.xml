@@ -13,13 +13,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/titlebar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F34242"
             android:paddingTop="15dp"
-            android:paddingBottom="15dp">
+            android:paddingBottom="15dp"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/comman_menu"
@@ -30,7 +31,25 @@
                 android:layout_marginLeft="20dp"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/img_content_description"
-                android:src="@drawable/ic_menu" />
+                android:src="@drawable/ic_drawer" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pangan"/>
+
+            <TextView
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="online"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -53,7 +72,7 @@
                 android:background="@drawable/ic_search"
                 android:clickable="true" />
             </LinearLayout>
-        </RelativeLayout>
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"

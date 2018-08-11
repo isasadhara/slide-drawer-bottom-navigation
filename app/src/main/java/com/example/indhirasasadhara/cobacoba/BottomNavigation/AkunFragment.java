@@ -1,4 +1,4 @@
-package com.example.indhirasasadhara.cobacoba.ViewPager;
+package com.example.indhirasasadhara.cobacoba.BottomNavigation;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.indhirasasadhara.cobacoba.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SecondFragment extends Fragment {
+public class AkunFragment extends Fragment {
 
 
-    public SecondFragment() {
+    public AkunFragment() {
         // Required empty public constructor
     }
 
@@ -24,9 +24,7 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_second, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_akun, container, false);
     }
 
 }

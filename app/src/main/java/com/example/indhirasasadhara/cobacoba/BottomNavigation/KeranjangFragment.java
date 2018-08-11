@@ -12,13 +12,13 @@ import com.example.indhirasasadhara.cobacoba.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BottomFragment3 extends Fragment {
-
-    public static BottomFragment3 newInstance() {
-        BottomFragment3 fragment = new BottomFragment3();
+public class KeranjangFragment extends Fragment {
+    public static KeranjangFragment newInstance() {
+        KeranjangFragment fragment = new KeranjangFragment();
         return fragment;
     }
-    public BottomFragment3() {
+
+    public KeranjangFragment() {
         // Required empty public constructor
     }
 
@@ -27,7 +27,7 @@ public class BottomFragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bottom_fragment3, container, false);
+        return inflater.inflate(R.layout.fragment_keranjang, container, false);
     }
 
 }
